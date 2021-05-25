@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="117b9d0e-25de-4e8a-adad-7d813a01811f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/calculator/ScannnerCalc/scannerMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/runner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
       <recent name="calculator" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.calcTest.testDivide">
+  <component name="RunManager" selected="Application.runner">
     <configuration name="runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="runner" />
       <module name="InfoSysBootcamp" />
@@ -133,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.runner" />
         <item itemvalue="JUnit.calcTest.testDivide" />
         <item itemvalue="JUnit.calcTest.testMultiply" />
-        <item itemvalue="Application.runner" />
         <item itemvalue="JUnit.calcTest.testAdd" />
         <item itemvalue="JUnit.calcTest" />
       </list>

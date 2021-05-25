@@ -6,14 +6,15 @@ import oop.abstraction.abRunner;
 import oop.bird;
 import oop.duck;
 import calculator.calculatorRunner;
+import calculator.ScannnerCalc.scannerMethod;
 
 public class runner {
 
     public static void main(String[] args) {
-        //fizzbuzz
+        // fizzbuzz
         // system.out.println(buzzy.fizzybuzz()); runs fuzzbuzz
 
-        //array loop
+        // array loop
         // arraylooping.arrayloops();
 
         //classes
@@ -27,8 +28,12 @@ public class runner {
 
         // oop.abstraction Here we begin new runner format to truncate code in the main runner.
         //        abRunner.RUNNER();
-        calculatorRunner.RUNNER();
 
+        //   calculator runner
+//        calculatorRunner.RUNNER();
+
+        //caculator with Scanner Runner
+        scannerMethod.Scanners();
     }
 }
 
