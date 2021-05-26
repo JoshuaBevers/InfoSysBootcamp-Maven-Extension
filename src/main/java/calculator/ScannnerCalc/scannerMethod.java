@@ -4,89 +4,123 @@ import java.util.Scanner;
 
 public class scannerMethod {
 
-    public static Scanner userInput = new Scanner(System.in);
+    public static Scanner uInput = new Scanner(System.in);
 
     public static void Scanners() {
-        boolean running = true;
-        while (running) {
+        boolean runState = true;
+
+        while (runState == true) {
+            System.out.println("Please type in a mode below:");
+            System.out.println("add: adds two numbers.");
+            System.out.println("subtract: Subtracts two numbers");
+            System.out.println("multiply: multiplies two numbers");
+            System.out.println("Divide: Divides two numbers");
+            String userInput = uInput.nextLine();
+
             try {
-                String userInput = getUserInput();
                 switch (userInput) {
                     case "add":
-                        running = handleAdd();
+                        handleAdd();
+                        continue;
+                    case "subtract":
+                        handleSubtract();
+                        continue;
+                    case "divide":
+                        handleDivide();
+                        continue;
+                    case "multiply":
+                        handleMultiply();
+                        continue;
+                    case "exit":
+                        System.out.println("Goodbye!");
+                        runState = false;
                         break;
                     default:
-                        System.out.println("Sorry, what you entered was not recognized.");
-                        break;
+                        System.out.println("Sorry. We didn't recognize that input! Try again.");
+                        continue;
                 }
+
             } catch (Exception e) {
-                System.out.println("Error: " + e);
-            } finally {
-                closeResources();
+                uInput.close();
+                System.out.println(e);
+                break;
             }
+
         }
         closeResources();
     }
 
-    private static String getUserInput() {
-        System.out.println("Please type a mode below");
-        System.out.println("add: adds two numbers together");
-        System.out.println("subtract: subtracts two numbers together");
-        System.out.println("multiply: multiplies two numbers together");
-        System.out.println("divide: divides two numbers together");
-        System.out.println("exit: exists the program.");
-        String parseInput = userInput.nextLine();
-        System.out.println(parseInput);
-        return parseInput;
-    }
 
-
-    private static boolean handleAdd() {
-        System.out.println("Hello from add!");
-        System.out.println("Please enter the first number!");
-        return false;
+    private static void handleAdd() {
+        try {
+            System.out.println("Please enter the first number!");
+            double num1 = uInput.nextDouble();
+            System.out.println("Please enter the second number!");
+            double num2 = uInput.nextDouble();
+            System.out.println(add(num1, num2));
+            System.out.println("Returning to main menu.....");
+        } catch (Exception e) {
+            //handle type mismatch exception.
+            if(e.toString() == "java.util.InputMismatchException"){
+                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
+            } else{
+                System.out.println(e);
+            }
+        }
     }
 
     private static void handleMultiply() {
-        System.out.println("Hello from multiply!");
-        System.out.println("Please enter the first number!");
-        Scanner userNumber1 = new Scanner(System.in);
-        double num1 = userNumber1.nextDouble();
-        System.out.println("Please enter the second number!");
-        Scanner userNumber2 = new Scanner(System.in);
-        double num2 = userNumber2.nextDouble();
-        double result = multiply(num1, num2);
-        System.out.println("Your total is: " + result);
-        userNumber1.close();
-        userNumber2.close();
+        try {
+            System.out.println("Please enter the first number!");
+            double num1 = uInput.nextDouble();
+            System.out.println("Please enter the second number!");
+            double num2 = uInput.nextDouble();
+            System.out.println(multiply(num1, num2));
+            System.out.println("Returning to main menu.....");
+        } catch (Exception e) {
+            //handle type mismatch exception.
+            if(e.toString() == "java.util.InputMismatchException"){
+                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
+            } else{
+                System.out.println(e);
+            }
+        }
     }
 
     private static void handleDivide() {
-        System.out.println("Hello from divide!");
-        System.out.println("Please enter the first number!");
-        Scanner userNumber1 = new Scanner(System.in);
-        double num1 = userNumber1.nextDouble();
-        System.out.println("Please enter the second number!");
-        Scanner userNumber2 = new Scanner(System.in);
-        double num2 = userNumber2.nextDouble();
-        double result = divide(num1, num2);
-        System.out.println("Your total is: " + result);
-        userNumber1.close();
-        userNumber2.close();
+        try {
+            System.out.println("Please enter the first number!");
+            double num1 = uInput.nextDouble();
+            System.out.println("Please enter the second number!");
+            double num2 = uInput.nextDouble();
+            System.out.println(divide(num1, num2));
+            System.out.println("Returning to main menu.....");
+        } catch (Exception e) {
+            //handle type mismatch exception.
+            if(e.toString() == "java.util.InputMismatchException"){
+                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
+            } else{
+                System.out.println(e);
+            }
+        }
     }
 
     private static void handleSubtract() {
-        System.out.println("Hello from subtract!");
-        System.out.println("Please enter the first number!");
-        Scanner userNumber1 = new Scanner(System.in);
-        double num1 = userNumber1.nextDouble();
-        System.out.println("Please enter the second number!");
-        Scanner userNumber2 = new Scanner(System.in);
-        double num2 = userNumber2.nextDouble();
-        double result = subtract(num1, num2);
-        System.out.println("Your total is: " + result);
-        userNumber1.close();
-        userNumber2.close();
+        try {
+            System.out.println("Please enter the first number!");
+            double num1 = uInput.nextDouble();
+            System.out.println("Please enter the second number!");
+            double num2 = uInput.nextDouble();
+            System.out.println(subtract(num1, num2));
+            System.out.println("Returning to main menu.....");
+        } catch (Exception e) {
+            //handle type mismatch exception.
+            if(e.toString() == "java.util.InputMismatchException"){
+                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
+            } else{
+                System.out.println(e);
+            }
+        }
     }
 
     private static double add(double a, double b) {
@@ -106,6 +140,7 @@ public class scannerMethod {
     }
 
     private static void closeResources() {
-        userInput.close();
+        System.out.println("closing scanners.");
+        uInput.close();
     }
 }
