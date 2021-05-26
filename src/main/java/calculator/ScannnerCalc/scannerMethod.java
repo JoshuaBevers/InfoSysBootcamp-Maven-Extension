@@ -16,20 +16,41 @@ public class scannerMethod {
             System.out.println("multiply: multiplies two numbers");
             System.out.println("divide: Divides two numbers");
             System.out.println("exit: exits the program");
+
             String userInput = uInput.nextLine();
+
+
+            System.out.println("User input is currently: " + userInput);
+
             try {
                 switch (userInput) {
                     case "add":
-                        handleAdd();
+                        double num1 = getNumber();
+                        double num2 = getNumber();
+                        double answer = handleAdd(num1, num2);
+                        System.out.println("The answer is: " + answer);
+                        System.out.println("Returning to main menu.....");
                         continue;
                     case "subtract":
-                        handleSubtract();
+                        double subNum1 = getNumber();
+                        double subNum2 = getNumber();
+                        double subAnswer = handleSubtract(subNum1, subNum2);
+                        System.out.println("The answer is: " + subAnswer);
+                        System.out.println("Returning to main menu.....");
                         continue;
                     case "divide":
-                        handleDivide();
+                        double divNum1 = getNumber();
+                        double divNum2 = getNumber();
+                        double divAnswer = handleDivide(divNum1, divNum2);
+                        System.out.println("The answer is: " + divAnswer);
+                        System.out.println("Returning to main menu.....");
                         continue;
                     case "multiply":
-                        handleMultiply();
+                        double mulNum1 = getNumber();
+                        double mulNum2 = getNumber();
+                        double mulAnswer = handleMultiply(mulNum1, mulNum2);
+                        System.out.println("The answer is: " + mulAnswer);
+                        System.out.println("Returning to main menu.....");
                         continue;
                     case "exit":
                         runState = false;
@@ -46,81 +67,47 @@ public class scannerMethod {
                 } else {
                     System.out.println(e);
                 }
-
             }
 
         }
         closeResources();
     }
 
-
-    private static void handleAdd() {
-        try {
-            System.out.println("Please enter the first number!");
-            double num1 = uInput.nextDouble();
-            System.out.println("Please enter the second number!");
-            double num2 = uInput.nextDouble();
-            System.out.println(add(num1, num2));
-            System.out.println("Returning to main menu.....");
-        } catch (Exception e) {
-            //handle type mismatch exception.
-            if (e.toString() == "java.util.InputMismatchException") {
-                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
-            } else {
-                System.out.println(e);
-            }
-        }
+    private static void clearScanner(){
+        uInput.nextLine();
     }
 
-    private static void handleMultiply() {
-        try {
-            System.out.println("Please enter the first number!");
-            double num1 = uInput.nextDouble();
-            System.out.println("Please enter the second number!");
-            double num2 = uInput.nextDouble();
-            System.out.println(multiply(num1, num2));
-            System.out.println("Returning to main menu.....");
-        } catch (Exception e) {
-            //handle type mismatch exception.
-            if (e.toString() == "java.util.InputMismatchException") {
-                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
-            } else {
-                System.out.println(e);
-            }
-        }
+    private static double getNumber() {
+        System.out.println("Please enter a number!");
+        double number = uInput.nextDouble();
+        return number;
     }
 
-    private static void handleDivide() {
-        try {
-            System.out.println("Please enter the first number!");
-            double num1 = uInput.nextDouble();
-            System.out.println("Please enter the second number!");
-            double num2 = uInput.nextDouble();
-            if(num2 == 0) {
-                System.out.println("Sorry. You can't divide by 0.");
-                handleDivide();
-            }
 
-            System.out.println(divide(num1, num2));
-            System.out.println("Returning to main menu.....");
+    private static double handleAdd(double num1, double num2) {
+        double answer = 0;
+        try {
+            answer = add(num1, num2);
+            clearScanner();
+            return answer;
         } catch (Exception e) {
             //handle type mismatch exception.
             if (e.toString() == "java.util.InputMismatchException") {
                 System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
             } else {
                 System.out.println(e);
+
             }
         }
+        return answer;
     }
 
-    private static void handleSubtract() {
+    private static double handleMultiply(double num1, double num2) {
+        double answer = 0;
         try {
-            System.out.println("Please enter the first number!");
-            double num1 = uInput.nextDouble();
-            System.out.println("Please enter the second number!");
-            double num2 = uInput.nextDouble();
-            System.out.println(subtract(num1, num2));
-            System.out.println("Returning to main menu.....");
+            answer = multiply(num1, num2);
+            clearScanner();
+            return answer;
         } catch (Exception e) {
             //handle type mismatch exception.
             if (e.toString() == "java.util.InputMismatchException") {
@@ -129,6 +116,41 @@ public class scannerMethod {
                 System.out.println(e);
             }
         }
+        return answer; // default return. Technically unreachable.
+    }
+
+    private static double handleDivide(double num1, double num2) {
+        double answer = 0;
+        try {
+            answer = multiply(num1, num2);
+            clearScanner();
+            return answer;
+        } catch (Exception e) {
+            //handle type mismatch exception.
+            if (e.toString() == "java.util.InputMismatchException") {
+                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
+            } else {
+                System.out.println(e);
+            }
+        }
+        return answer; // default return. Technically unreachable.
+    }
+
+    private static double handleSubtract(double num1, double num2) {
+        double answer = 0;
+        try {
+            answer = subtract(num1, num2);
+            clearScanner();
+            return answer;
+        } catch (Exception e) {
+            //handle type mismatch exception.
+            if (e.toString() == "java.util.InputMismatchException") {
+                System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
+            } else {
+                System.out.println(e);
+            }
+        }
+        return answer; // default return. Technically unreachable.
     }
 
     private static double add(double a, double b) {

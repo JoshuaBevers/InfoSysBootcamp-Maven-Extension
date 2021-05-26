@@ -9,6 +9,7 @@ public class calcTest {
 
     @Test
     public void testAdd() {
+
         double addTest = calcMethods.add(4, 5);
         assertEquals(9, addTest);
     }
