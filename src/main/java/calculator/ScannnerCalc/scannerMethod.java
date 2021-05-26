@@ -15,6 +15,7 @@ public class scannerMethod {
             System.out.println("subtract: Subtracts two numbers");
             System.out.println("multiply: multiplies two numbers");
             System.out.println("Divide: Divides two numbers");
+            System.out.println("exit: exits the program");
             String userInput = uInput.nextLine();
 
             try {
@@ -32,7 +33,6 @@ public class scannerMethod {
                         handleMultiply();
                         continue;
                     case "exit":
-                        System.out.println("Goodbye!");
                         runState = false;
                         break;
                     default:
@@ -41,9 +41,13 @@ public class scannerMethod {
                 }
 
             } catch (Exception e) {
-                uInput.close();
-                System.out.println(e);
-                break;
+                if (e.toString() == "java.util.InputMismatchException") {
+                    System.out.println("Sorry. That wasn't a recognized input");
+                    continue;
+                } else {
+                    System.out.println(e);
+                }
+
             }
 
         }
@@ -61,9 +65,9 @@ public class scannerMethod {
             System.out.println("Returning to main menu.....");
         } catch (Exception e) {
             //handle type mismatch exception.
-            if(e.toString() == "java.util.InputMismatchException"){
+            if (e.toString() == "java.util.InputMismatchException") {
                 System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
-            } else{
+            } else {
                 System.out.println(e);
             }
         }
@@ -79,9 +83,9 @@ public class scannerMethod {
             System.out.println("Returning to main menu.....");
         } catch (Exception e) {
             //handle type mismatch exception.
-            if(e.toString() == "java.util.InputMismatchException"){
+            if (e.toString() == "java.util.InputMismatchException") {
                 System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
-            } else{
+            } else {
                 System.out.println(e);
             }
         }
@@ -97,9 +101,9 @@ public class scannerMethod {
             System.out.println("Returning to main menu.....");
         } catch (Exception e) {
             //handle type mismatch exception.
-            if(e.toString() == "java.util.InputMismatchException"){
+            if (e.toString() == "java.util.InputMismatchException") {
                 System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
-            } else{
+            } else {
                 System.out.println(e);
             }
         }
@@ -115,9 +119,9 @@ public class scannerMethod {
             System.out.println("Returning to main menu.....");
         } catch (Exception e) {
             //handle type mismatch exception.
-            if(e.toString() == "java.util.InputMismatchException"){
+            if (e.toString() == "java.util.InputMismatchException") {
                 System.out.println("Sorry. That wasn't a recognized number. Returning to main Menu!");
-            } else{
+            } else {
                 System.out.println(e);
             }
         }
@@ -140,7 +144,7 @@ public class scannerMethod {
     }
 
     private static void closeResources() {
-        System.out.println("closing scanners.");
+        System.out.println("closing scanners. Have a nice Day!");
         uInput.close();
     }
 }

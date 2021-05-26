@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="117b9d0e-25de-4e8a-adad-7d813a01811f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/calculator/ScannnerCalc/scannerMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/calculator/ScannnerCalc/scannerMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/calculator/ScannnerCalc/scannerMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/calculator/ScannnerCalc/scannerMethod.class" afterDir="false" />
     </list>
