@@ -14,10 +14,9 @@ public class scannerMethod {
             System.out.println("add: adds two numbers.");
             System.out.println("subtract: Subtracts two numbers");
             System.out.println("multiply: multiplies two numbers");
-            System.out.println("Divide: Divides two numbers");
+            System.out.println("divide: Divides two numbers");
             System.out.println("exit: exits the program");
             String userInput = uInput.nextLine();
-
             try {
                 switch (userInput) {
                     case "add":
@@ -97,6 +96,11 @@ public class scannerMethod {
             double num1 = uInput.nextDouble();
             System.out.println("Please enter the second number!");
             double num2 = uInput.nextDouble();
+            if(num2 == 0) {
+                System.out.println("Sorry. You can't divide by 0.");
+                handleDivide();
+            }
+
             System.out.println(divide(num1, num2));
             System.out.println("Returning to main menu.....");
         } catch (Exception e) {
